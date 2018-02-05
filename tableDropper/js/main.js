@@ -11,7 +11,6 @@ $(document).ready( function () {
 
 
   $('.table').on('click', function () {
-
     $(this).toggleClass("selected")
   })
 
@@ -20,7 +19,8 @@ $(document).ready( function () {
 
     let x = e.pageX
     let y = e.pageY
-    console.log(e.target );
+    // console.log(e.target);
+    // debugger;
 
     if ( $('.selected').length === 0 ) {
       console.log("nothing selected");
@@ -35,9 +35,18 @@ $(document).ready( function () {
           height: "50px"
         }).
         removeClass("selected").
+        removeClass("icon").
+        addClass("placed").
         appendTo('#floor');
 
       state.nextTableNumber ++
+
+    }
+    if (e.target.className === "table placed") {
+      let $t = $(e.target)
+      console.log($t);
+      $t.toggleClass("selected")
+
     }
 
 
