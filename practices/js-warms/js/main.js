@@ -155,21 +155,82 @@ const scrabble = (word) => {
 const anagrammer = {
   checkWord: function (word, list) {
     for (var i = 0; i < list.length; i++) {
-      this.checkWord2(word, list[i])
-      console.log(this.checkWord2(word, list[i]));
+      if ( word.length === list[i].length ) {
+        console.log("same length word");
+        this.checkWord2(word, list[i])
+      } else {
+        console.log("not a match");
+      }
+
     }
   },
 
   checkWord2: function (word, candidateMatch) {
     console.log(`checking ${word} against ${candidateMatch}`);
+    if (word.split('').sort().join('') === candidateMatch.split('').sort().join('') ) {
+      console.log(`${candidateMatch} is an anagram of ${word}`);
+    }
+
   }
 }
 
-console.log(anagrammer.checkWord("bob", ["fred", "james", "bob"]));
+
+// anagrammer.checkWord("bob", ["fred", "james", "bob", "obo", "bbo"])
 
 
+const spaceAge = (seconds, planet = "All") => {
+  console.log(`starting spacge with input: ${seconds} ${planet}`);
+  //   Given an age in seconds, calculate how old someone would be on:
+  //
+  // Earth: orbital period 365.25 Earth days, or 31557600 seconds
+  // Mercury: orbital period 0.2408467 Earth years
+  // Venus: orbital period 0.61519726 Earth years
+  // Mars: orbital period 1.8808158 Earth years
+  // Jupiter: orbital period 11.862615 Earth years
+  // Saturn: orbital period 29.447498 Earth years
+  // Uranus: orbital period 84.016846 Earth years
+  // Neptune: orbital period 164.79132 Earth years
+  // So if you were told someone were 1,000,000,000 seconds old, you should be able to say that they're 31 Earth-years old.
+  //
+  // There are 31557600 seconds in an Earth year.
+  //
+  // Bonus:
+  // Have the option of either returning the ages on all planets, or any of the above planets individually.
+
+  planets = {
+    Earth: (seconds) => {
+      let constant = 1
+      console.log(`age on Earth: `, age(seconds, constant));
 
 
+    },
+    Mercury: (seconds) => {
+      let constant = 0.24
+
+      console.log(`age on Mercury: `, age(seconds, constant));
+    }
+  }
+
+  age = (seconds, constant) => {
+    return Math.round(seconds / 31557600 / constant)
+  }
+
+  if (planet === "All") {
+    console.log("all planets");
+    _.each(planets, (k,v) => {
+      // console.log(k);
+      this.planets[v](seconds)
+    })
+  } else {
+    console.log("else");
+    this.planets[planet](seconds)
+  }
+
+}
+
+// spaceAge(1000000000, "Earth")
+// spaceAge(1000000000, "Mercury")
+// spaceAge(100000000)
 
 
 
