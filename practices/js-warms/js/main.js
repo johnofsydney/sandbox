@@ -233,6 +233,29 @@ const spaceAge = (seconds, planet = "All") => {
 // spaceAge(100000000)
 
 
+const arrayObj = [
+  { first: "Romeo", last: "Montague" },
+  { first: "Mercutio", last: null },
+  { first: "Tybalt", last: "Capulet" }
+];
+
+const whatIsInAName = (arr, obj) => {
+  // console.log(arr);
+  // console.log(obj);
+
+  $.each(arr, (i,e) => {
+    // console.log(i);
+    // console.log(e);
+
+    $.each(e, (k,v) => {
+      console.log(k,v);
+      console.log(obj);
+    })
+  })
+
+}
+
+whatIsInAName( arrayObj, { last: "Capulet" } );
 
 
 
