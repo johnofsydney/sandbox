@@ -236,27 +236,51 @@ const spaceAge = (seconds, planet = "All") => {
 const arrayObj = [
   { first: "Romeo", last: "Montague" },
   { first: "Mercutio", last: null },
+  { first: "Tom", last: "Capulet" },
+  { first: "Fred", last: "Capulet" },
   { first: "Tybalt", last: "Capulet" }
 ];
 
-const whatIsInAName = (arr, obj) => {
-  // console.log(arr);
-  // console.log(obj);
+// const whatIsInAName = (arr, obj) => {
+//   const srcKeys = Object.keys(obj)
+//
+//   console.log(srcKeys);
+//   console.log(obj[srcKeys]);
+//
+//   let answer = arr.filter( function(o) {
+//     // console.log(o);
+//     if (o[srcKeys] === obj[srcKeys]) {
+//       console.log(o, "true");
+//       return true;
+//     } else {
+//       console.log(o, false);
+//       return false;
+//     }
+//   })
+//
+//   console.log(answer);
+// }
 
-  $.each(arr, (i,e) => {
-    // console.log(i);
-    // console.log(e);
+const whatIsInAName = (collection, sample) => {
+  // console.log(collection);
+  // console.log(sample);
+  srcKeys = Object.keys(sample)
+  // console.log(srcKeys);
 
-    $.each(e, (k,v) => {
-      console.log(k,v);
-      console.log(obj);
-    })
+  let result = collection.filter (function (obj) {
+    if (sample[srcKeys] === obj[srcKeys]) {
+      return true
+    } else {
+      return false
+    }
   })
 
+  // console.log(result);
+  return result
 }
 
-whatIsInAName( arrayObj, { last: "Capulet" } );
-
+const names = whatIsInAName( arrayObj, { last: "Capulet" } );
+console.log(names);
 
 
 
