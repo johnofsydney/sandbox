@@ -241,25 +241,6 @@ const arrayObj = [
   { first: "Tybalt", last: "Capulet" }
 ];
 
-// const whatIsInAName = (arr, obj) => {
-//   const srcKeys = Object.keys(obj)
-//
-//   console.log(srcKeys);
-//   console.log(obj[srcKeys]);
-//
-//   let answer = arr.filter( function(o) {
-//     // console.log(o);
-//     if (o[srcKeys] === obj[srcKeys]) {
-//       console.log(o, "true");
-//       return true;
-//     } else {
-//       console.log(o, false);
-//       return false;
-//     }
-//   })
-//
-//   console.log(answer);
-// }
 
 const whatIsInAName = (collection, sample) => {
   // console.log(collection);
@@ -280,7 +261,7 @@ const whatIsInAName = (collection, sample) => {
 }
 
 const names = whatIsInAName( arrayObj, { last: "Capulet" } );
-console.log(names);
+// console.log(names);
 
 
 
