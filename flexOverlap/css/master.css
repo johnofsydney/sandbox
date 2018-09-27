@@ -1,0 +1,31 @@
+body {
+  background-color: pink;
+}
+
+.crossbow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.red {
+  min-width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+.blue {
+  min-width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+
+.crossbow p:nth-child(4) {
+  flex: 3;
+  color: blue;
+}
+.crossbow p:nth-child(3) {
+  flex: 2;
+  color: yellow;
+}

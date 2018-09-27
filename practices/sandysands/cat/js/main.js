@@ -14,9 +14,20 @@ const move = function () {
   newLeft = oldLeft + 20
   catgif.style.left = newLeft + 'px'
 
+  if (newLeft > 500) {
+
+    console.log("pausing");
+
+    
+
+
+  }
+
   if (newLeft > 1000) {
     clearInterval(catTimerDone)
     console.log("im tired thats far enough");
+
+
   }
 
 }

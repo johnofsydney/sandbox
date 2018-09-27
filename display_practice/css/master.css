@@ -1,0 +1,36 @@
+body {
+  background-color: pink;
+  border: red solid 1px;
+}
+
+
+#one {
+  display: none;
+  width: 200px;
+  height: 200px;
+  background-color: yellow;
+}
+#two {
+  display: block;
+  width: 200px;
+  height: 200px;
+  background-color: grey;
+}
+#three {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+}
+#four {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-color: orange;
+}
+#five {
+  display: block;
+  width: 200px;
+  height: 200px;
+  background-color: orange;
+}

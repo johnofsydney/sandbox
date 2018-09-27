@@ -1,0 +1,8 @@
+body {
+  background: pink;
+}
+
+#reveal {
+  display: none;
+  height: 0;
+}
